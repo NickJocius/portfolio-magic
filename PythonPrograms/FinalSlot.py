@@ -399,7 +399,7 @@ def game_body():
                 bank += (bet + 35)
                 print("You won $35 \n")
 
-            elif (reel1 == "Bar"):
+            elif (reel3 == "Bar"):
                 print("Winner 2 Bar! \n")
                 bank += (bet + 45)
                 print("You won $45 \n")
