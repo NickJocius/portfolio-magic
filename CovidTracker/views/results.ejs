@@ -1,0 +1,58 @@
+<%- include("partials/head") %>
+
+<%- include("partials/header1") %>
+    <div class="container-fluid mt-2 p-3 ">
+        <h2 id="stateTitle">
+            <%= dataInfo.name %>
+        </h2>
+        <hr>
+        <p class="mx-auto" id="stateNotes">
+            <%= dataInfo.notes %>
+        </p>
+    </div>
+   
+    
+    <div class="table-responsive mt-5">
+        <table class="table table-dark">
+            <tbody>
+                <tr>
+                     
+                    <th scope="row">Positive Tests:</th>
+                    <td class="tableNumData"><%= dataCurrent.positive %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Negative Tests:</th>
+                    <td class="tableNumData"><%= dataCurrent.negative %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Total Tests:</th>
+                    <td class="tableNumData"><%= dataCurrent.total %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Currently Hospitalized:</th>
+                    <td class="tableNumData"><%= dataCurrent.hospitalizedCurrently %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Currently On Ventalilator:</th>
+                    <td class="tableNumData"><%= dataCurrent.onVentilatorCurrently %></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Deaths:</th>
+                    <td class="tableNumData"><%= dataCurrent.death %></td>
+                  </tr>
+                <tr>
+                  <th scope="row">Recovered:</th>
+                  <td class="tableNumData"><%= dataCurrent.recovered %></td>
+                </tr>
+                <tr>
+                    <th scope="row">Last Updated:</th>
+                    <td id="tableDate"><%= dataCurrent.dateChecked %></td>
+                  </tr>
+              </tbody>
+        </table>
+      </div>
+
+
+<%- include("partials/footer") %>
+
+<script src="/js/resultsPage.js" type="text/javascript"></script>

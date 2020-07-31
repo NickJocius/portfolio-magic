@@ -1,0 +1,77 @@
+<%- include("partials/head") %>
+
+<%- include("partials/header1") %>
+
+  <div class="d-flex flex-row justify-content-center align-items-center mb-0 mt-0" id="redCovid">
+    <form action="/results/:state" method="GET" class="p-5 m-5 border border-dark shadow-lg" id="stateForm">
+      <h4 class="text-center p-3" id="statePicker">Pick A State</h4>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1 mx-auto">
+          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="state" id="state" required>
+            <option selected value="">Choose State...</option>
+            <option value="ak">Alaska</option>
+            <option value="al">Alabama</option>
+            <option value="ar">Arkansas</option>
+            <option value="as">American Samoa</option>
+            <option value="az">Arizonia</option>
+            <option value="ca">California</option>
+            <option value="co">Colorado</option>
+            <option value="dc">District of Columbia</option>
+            <option value="de">Delaware</option>
+            <option value="fl">Florida</option>
+            <option value="ga">Georgia</option>
+            <option value="hi">Hawaii</option>
+            <option value="ia">Iowa</option>
+            <option value="id">Idaho</option>
+            <option value="il">Illinois</option>
+            <option value="in">Indiana</option>
+            <option value="ks">Kansas</option>
+            <option value="ky">Kentucky</option>
+            <option value="la">Louisiana</option>
+            <option value="ma">Massachusetts</option>
+            <option value="md">Maryland</option>
+            <option value="me">Maine</option>
+            <option value="mi">Michigan</option>
+            <option value="mn">Minnesota</option>
+            <option value="mo">Missouri</option>
+            <option value="ms">Mississippi</option>
+            <option value="mt">Montana</option>
+            <option value="nc">North Carolina</option>
+            <option value="nd">North Dakota</option>
+            <option value="ne">Nebraska</option>
+            <option value="nh">New Hampshire</option>
+            <option value="nj">New Jersey</option>
+            <option value="nm">New Mexico</option>
+            <option value="nv">Nevada</option>
+            <option value="ny">New York</option>
+            <option value="oh">Ohio</option>
+            <option value="ok">Oklahoma</option>
+            <option value="or">Oregon</option>
+            <option value="pa">Pennsylvania</option>
+            <option value="pr">Puerto Rico</option>
+            <option value="ri">Rhode Island</option>
+            <option value="sc">South Carolina</option>
+            <option value="sd">South Dakota</option>
+            <option value="tn">Tennesse</option>
+            <option value="tx">Texas</option>
+            <option value="ut">Utah</option>
+            <option value="va">Virginia</option>
+            <option value="vi">Virgin Islands</option>
+            <option value="vt">Vermont</option>
+            <option value="wa">Washington</option>
+            <option value="wi">Wisconsin</option>
+            <option value="wv">West Virginia</option>
+            <option value="wy">Wyoming</option>
+          </select>
+        </div>
+        <div class="col-auto my-1 mx-auto">
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+<%- include("partials/footer") %>

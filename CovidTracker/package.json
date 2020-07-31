@@ -1,0 +1,20 @@
+{
+  "name": "covidtracker",
+  "version": "1.0.0",
+  "description": "Tracker for Covid Data",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "Nick Jocius",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "json.date-extensions": "^1.2.2",
+    "nodemon": "^2.0.4"
+  }
+}
