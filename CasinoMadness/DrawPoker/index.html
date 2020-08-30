@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="true" />
+    <title>Casino Madness - Draw Poker</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css"
+    />
+    <link href="css\reset.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/poker.js" async="async"></script>
+    <script type="text/javascript" src="js/cards.js" async="async"></script>
+  </head>
+  <body>
+    <header class="container-fluid p-0">
+      <img src="images/Casino.png" alt="" srcset="" class="w-100 p-0 h-100" />
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <a class="navbar-brand text-danger" href="#">Casino Madness</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Our Games
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">BlackJack</a>
+              <a class="dropdown-item" href="/">5 Card Draw</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Craps</a>
+              <a class="dropdown-item" href="#">Roullette</a>
+              <a class="dropdown-item" href="#">Slots</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-light navbar-right">
+          <li class="nav-item">
+            <a href="#" class="nav-link"
+              ><i class="fa fa-user" aria-hidden="true"></i> Sign Up</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"
+              ><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid d-flex flex-column">
+      <h1 class="my-2 py-4" id="titleh1">5 Card Draw</h1>
+      <section id="pokerTable" class="container-fluid py-3">
+        <div id="hand" class="container-fuid m-auto">
+          <div class="row h-100 container-fluid d-flex justify-content-center">
+            <div class="row w-100 pt-3">
+              <div class="col p-0">
+                <img
+                  src="images/cardstack.png"
+                  alt=""
+                  id="cardstack"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col pr-1 pl-0">
+                <img
+                  id="card0"
+                  class="cardImg img-fluid"
+                  src="images/trans.gif"
+                />
+              </div>
+              <div class="col pr-1 pl-0">
+                <img
+                  id="card1"
+                  class="cardImg img-fluid"
+                  src="images/trans.gif"
+                />
+              </div>
+              <div class="col pr-1 pl-0">
+                <img
+                  id="card2"
+                  class="cardImg img-fluid"
+                  src="images/trans.gif"
+                />
+              </div>
+              <div class="col pr-1 pl-0">
+                <img
+                  id="card3"
+                  class="cardImg img-fluid"
+                  src="images/trans.gif"
+                />
+              </div>
+              <div class="col p-0">
+                <img
+                  id="card4"
+                  class="cardImg img-fluid"
+                  src="images/trans.gif"
+                />
+              </div>
+            </div>
+            <div class="row w-100">
+              <div class="col">
+                <div id="handValue"></div>
+              </div>
+              <div class="container mx-auto" id="btns">
+                <input
+                  type="button"
+                  id="dealB"
+                  value="Deal"
+                  class="pokerButton btn-sm btn btn-light"
+                />
+                <input
+                  type="button"
+                  id="drawB"
+                  value="Draw"
+                  class="pokerButton btn-sm btn btn-light"
+                  disabled="disabled"
+                />
+
+                <input
+                  type="button"
+                  id="standB"
+                  value="Stand"
+                  class="pokerButton btn-sm btn btn-light"
+                  disabled="disabled"
+                />
+
+                <input
+                  type="button"
+                  id="resetB"
+                  value="Reset"
+                  class="pokerButton btn-sm btn btn-light"
+                />
+
+                <label id="betLabel" for="bet" class="align-self-center"
+                  >BET</label
+                >
+                <select id="bet" name="bet">
+                  <option value="25">$25</option>
+                  <option value="50">$50</option>
+                  <option value="75">$75</option>
+                  <option value="100">$100</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="container-md d-flex p-3 my-2 flex-column align-content-center"
+        id="instructions"
+      >
+        <div class="row">
+          <input
+            type="button"
+            name="save"
+            id="saveBtn"
+            value="Save"
+            class="btn btn-lg btn-danger m-auto"
+          />
+          <label id="bankLabel" for="bank">BANK</label>
+          <input type="text" readonly id="bank" name="bank" />
+          <input
+            type="button"
+            name="load"
+            id="loadBtn"
+            value="Load"
+            class="btn btn-lg btn-light m-auto"
+          />
+        </div>
+        <p>
+          Select the size of your bet from the drop-down list box and then click
+          the <strong>Deal</strong> button to deal your hand. To draw new cards,
+          select the cards to discard and then click the
+          <strong>Draw</strong> button. To stand, click the
+          <strong>Stand</strong> button. Click the <strong>Save</strong> button
+          to save your current bank and <strong>Load</strong> to load your saved
+          bank. To the game and reset your bank, click the
+          <strong>Reset</strong> button.
+        </p>
+      </section>
+
+      <section class="container-xl m-auto" id="tableSection">
+        <table
+          class="table table-hover table-dark table-responsive-sm"
+          id="oddsTable"
+        >
+          <colgroup>
+            <col class="firstCol" />
+            <col class="secondCol" />
+            <col class="firstCol" />
+            <col class="secondCol" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Hand</th>
+              <th scope="col">Payoff</th>
+              <th scope="col">Hand</th>
+              <th scope="col">Payoff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Royal Flush</td>
+              <td>x 250</td>
+              <td>Straight</td>
+              <td>x 4</td>
+            </tr>
+            <tr>
+              <td>Straight Flush</td>
+              <td>x 50</td>
+              <td>3 of a Kind</td>
+              <td>x 3</td>
+            </tr>
+            <tr>
+              <td>4 of a Kind</td>
+              <td>x 25</td>
+              <td>2 Pair</td>
+              <td>x 2</td>
+            </tr>
+            <tr>
+              <td>Full House</td>
+              <td>x 9</td>
+              <td>Jacks or Better</td>
+              <td>x 1</td>
+            </tr>
+            <tr>
+              <td>Flush</td>
+              <td>x 6</td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer class="justify-content-end m-auto">
+        <p class="d-flex flex-row justify-content-center p-4">
+          Madness Casino &copy; 2018 All Rights Reserved
+        </p>
+      </footer>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
