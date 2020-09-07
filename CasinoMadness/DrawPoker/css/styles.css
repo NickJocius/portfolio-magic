@@ -15,6 +15,7 @@
 
 html {
   width: 100%;
+  min-width: 180px;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -41,6 +42,11 @@ body {
   z-index: 100;
 }
 
+.navbar-brand {
+  font-size: clamp(.8rem,2vw,1.9rem);
+  margin-right: 0;
+}
+
 /* Table styles */
 #tableSection {
   background-image: url("../images/heathjoker.png");
@@ -57,7 +63,7 @@ body {
 /* Poker Table and Board styls */
 #titleh1 {
   text-align: center;
-  font-size: min(12vh, 25vw);
+  font-size: clamp(1.8rem,5vw,5rem);
   font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black",
     "sans-serif";
   color: rgb(230, 230, 230);
@@ -109,13 +115,13 @@ body {
 #hand #handValue {
   text-align: center;
   color: rgb(255, 255, 255);
-  font-size: 1.2em;
+  font-size: clamp(.9rem,2vw,1.5rem);
   letter-spacing: 0.3em;
 }
 
 #bank {
   width: min(52%, 210px);
-  font-size: min(4vh, 5vw);
+  font-size: clamp(1.5rem,3vw,3rem);
   color: white;
   letter-spacing: 0.2em;
   background-color: transparent;
@@ -124,7 +130,7 @@ body {
 }
 
 #bankLabel {
-  font-size: min(4vh, 5vw);
+  font-size: clamp(1.5rem,2.5vw,3rem);
   width: 40%;
   color: rgba(253, 253, 253, 0.7);
   text-shadow: black 1px 1px 2px, white -1px -1px 0px;
