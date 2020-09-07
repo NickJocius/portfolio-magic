@@ -1,0 +1,11 @@
+#ignore everything
+*
+#unignore things we want to track
+!*.mp3
+!*.png
+!*.jpg
+!*.html
+!*.js
+!*.php
+!*/
+!*.gitignore

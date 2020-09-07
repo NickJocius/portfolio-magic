@@ -128,6 +128,16 @@ function playDrawPoker() {
     } else {
       alert("Reduce the size of your bet");
     } //end else
+
+    //Check for bankrupt
+    if (bankBox.value == 0) {
+      jokerLaugh();
+      disableObj(dealButton);
+      disableObj(betSelection);
+      disableObj(drawButton);
+      disableObj(standButton);
+    }
+
   }); //end eventListener
 
   //Enable the Deal and Bet options when the current hand ends
@@ -151,8 +161,21 @@ function playDrawPoker() {
     //Evaluate the hand drawn by user
     handValueText.textContent = myHand.handType();
 
+    //Check what hand for audio
+    harleyAudio(handValueText.textContent);
+
     //Pay of the final hand
     bankBox.value = pokerGame.payout(myHand.handOdds());
+
+    //Check for bankrupt
+    if (bankBox.value == 0) {
+      jokerLaugh();
+      disableObj(dealButton);
+      disableObj(betSelection);
+      disableObj(drawButton);
+      disableObj(standButton);
+    }
+
   }); //end eventListener
 
   standButton.addEventListener("click", function () {
@@ -163,9 +186,19 @@ function playDrawPoker() {
 
     //Evaluate the hand delt to the user
     handValueText.textContent = myHand.handType();
+    //Check what hand for audio
+    harleyAudio(handValueText.textContent);
 
     //Pay off the final hand
     bankBox.value = pokerGame.payout(myHand.handOdds());
+    //Check for bankrupt
+    if (bankBox.value == 0) {
+      jokerLaugh();
+      disableObj(dealButton);
+      disableObj(betSelection);
+      disableObj(drawButton);
+      disableObj(standButton);
+    }
   }); //end eventListener
 
   //The Deal, Draw, and Stand buttons and the Bet selection list will be turned on and off
@@ -194,4 +227,55 @@ function playDrawPoker() {
       image.onclick = null;
     }); //end for
   }
+
+  //Plays audio of joker laughing when bankrupt
+  function jokerLaugh() {
+    let audio = new Audio("audio/jokerLaugh.mp3");
+    audio.play();
+  }
+
+  //Takes in handvalue and plays different harley audio
+  function harleyAudio(winningHand) {
+
+    let thankyou = new Audio("audio/thankYou.mp3");
+    let sure = new Audio("audio/sureokay.mp3");
+    let what = new Audio("audio/whatdid.mp3");
+    let yours = new Audio("audio/allyours.mp3");
+    let welcome = new Audio("audio/welcome.mp3");
+    let ownit = new Audio("audio/ownthat.mp3");
+
+    switch (winningHand) {
+      case "No Winner":
+        what.play();
+        break;
+      case "Jacks or Better":
+        sure.play();
+        break;
+      case "Two Pair":
+        sure.play();
+        break;
+      case "Three of a Kind":
+        thankyou.play();
+        break;
+      case "Straight":
+        thankyou.play();
+        break;
+      case "Flush":
+        welcome.play();
+        break;
+      case "Full House":
+        yours.play();
+        break;
+      case "Four of a Kind":
+        yours.play();
+        break;
+      case "Straight Flush":
+        ownit.play();
+        break;
+      case "Royal Flush":
+        ownit.play();
+        break;
+    }
+  }
+
 } //end playDrawPoker function
