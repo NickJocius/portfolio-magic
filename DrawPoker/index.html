@@ -68,7 +68,7 @@
 
   <div class="container-fluid d-flex flex-column">
     <h1 class="my-2 py-4" id="titleh1">5 Card Draw</h1>
-    <section id="pokerTable" class="container-fluid py-3">
+    <section id="pokerTable" class="container-fluid py-0">
       <div id="hand" class="container-fuid m-auto">
         <div class="row h-100 container-fluid d-flex justify-content-center">
           <div class="row w-100 pt-3">
@@ -92,7 +92,7 @@
             </div>
           </div>
           <div class="row w-100">
-            <div class="col">
+            <div class="col handCol">
               <div id="handValue"></div>
             </div>
             <div class="container mx-auto" id="btns">
@@ -118,11 +118,11 @@
       </div>
     </section>
     <section class="container-md d-flex p-3 my-2 flex-column align-content-center" id="instructions">
-      <div class="row align-content-center">
-        <input type="button" name="save" id="saveBtn" value="Save" class="btn btn-lg btn-danger m-auto" />
+      <div class="row flex-column-xs flex-row-md align-content-center">
+        <input type="button" name="save" id="saveBtn" value="Save" class="btn btn btn-danger m-auto" />
         <label id="bankLabel" class="my-auto" for="bank">BANK</label>
-        <input type="text" readonly id="bank" name="bank" class="" />
-        <input type="button" name="load" id="loadBtn" value="Load" class="btn btn-lg btn-light m-auto" />
+        <input type="text" readonly id="bank" name="bank" class="form-control" />
+        <input type="button" name="load" id="loadBtn" value="Load" class="btn btn btn-light m-auto" />
       </div>
       <p>
         Select the size of your bet from the drop-down list box and then click

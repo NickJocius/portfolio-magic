@@ -78,7 +78,7 @@ function playDrawPoker() {
 
   //Restart the game when the REset button is clicked
   resetButton.addEventListener("click", function () {
-    pokerGame.currentBank = 1000;
+    pokerGame.currentBank = 500;
     localStorage.setItem("bank", pokerGame.defaultBank);
     bankBox.value = pokerGame.currentBank;
     enableObj(dealButton);

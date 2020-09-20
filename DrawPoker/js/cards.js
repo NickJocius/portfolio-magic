@@ -35,7 +35,7 @@
 let pokerGame = {
   currentBank: null,
   currentBet: null,
-  defaultBank: 1000,
+  defaultBank: 500,
 
   placeBet: function () {
     this.currentBank -= this.currentBet;
