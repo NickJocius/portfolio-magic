@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/*
+ * Name: Nick Jocius
+ * Intermediate Web
+ * Purpose: main.css for MVC coding07 assignment
+ * Date: 10/16/2020
+ */
+
+
+ /* Html and body styles */
+
+ html {
+    min-width: fit-content;
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+ }
+
+ body {
+    min-width: 100%;
+    min-height: 100vh;
+    margin:0;
+    padding:0;
+ }
+
+ /* Navbar */
+ .Navbar {
+     background:black;
+ }
+
+ .Navbar a {
+    font-size:clamp(.8rem, -0.875rem + 8.333vw, 1.2rem);
+ }
+
+/* Home Page Style */
+.Home {
+    min-height: 100vh;
+ }
+
+ .Home .drop {
+     background-color: black;
+ }
+
+ .Home label {
+    font-size:clamp(.8rem, -0.875rem + 8.333vw, 1.2rem);
+ }
+
+ .Home #dropboundary {
+     width: 100%;
+     height: 100%;
+     z-index: 99999;
+ }
+
+ #dragRow {
+     touch-action: none;
+     overflow: hidden;
+     min-height: 100vh;
+ }
+
+ .Home .item {
+     touch-action: none;
+     user-select: none;
+     position: relative;
+ }
+
+ .Home #rocket {
+    z-index: 99999;
+ }
+
+ .Home #comet {
+     z-index: 99999;
+ }
+
+ .Home #ufo {
+     z-index: 99999;
+ }
+
+ .Home #alien {
+    z-index: 99999;
+ }
+
+ /* About Page */
+ .About {
+     min-width: fit-content;
+     min-height: 100vh;
+     background: rgb(233,233,233);
+     background: -moz-radial-gradient(circle, rgba(233,233,233,1) 35%, rgba(255,255,255,0.9948354341736695) 72%, rgba(135,134,134,1) 85%, rgba(255,255,255,1) 96%);
+     background: -webkit-radial-gradient(circle, rgba(233,233,233,1) 35%, rgba(255,255,255,0.9948354341736695) 72%, rgba(135,134,134,1) 85%, rgba(255,255,255,1) 96%);
+     background: radial-gradient(circle, rgba(233,233,233,1) 35%, rgba(255,255,255,0.9948354341736695) 72%, rgba(135,134,134,1) 85%, rgba(255,255,255,1) 96%);
+     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e9e9e9",endColorstr="#ffffff",GradientType=1);
+ }
+
+.About .info p {
+   font-size: clamp(1rem, -0.875rem + 8.333vw, 1.8rem);
+}
+
+.About #myModal {
+   max-width: 90%;
+}
+
+ #imgCol {
+    background: black url("/assets/images/wave.jpg") top right/ 100% 80%  fixed no-repeat ;
+}
+
+ /* Home background choices */
+.purple {
+    background: black url("/assets/images/space.jpg") center/ cover fixed no-repeat ; 
+}
+
+.moon {
+   background: black url("/assets/images/moon.jpg") center/ cover  fixed no-repeat ; 
+}
+
+.earth {
+   background: black url("/assets/images/earth.jpg") center/ cover  fixed no-repeat ; 
+}
+
+.saturn {
+   background: black url("/assets/images/saturn.jpg") center/ cover  fixed no-repeat ; 
+}
+
+
+ footer {
+    background-image: linear-gradient(to left top, #2e0659, #40097b, #530c9f, #660fc4, #7a12eb);
+    color:white;
+    font-size: clamp(.8rem, -0.875rem + 8.333vw, 1.2rem);
+ }
