@@ -12,6 +12,9 @@
   "author": "Nick Jocius",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.2",
     "cookie-parser": "^1.4.5",
     "debug": "^4.2.0",
     "dotenv": "^8.2.0",
@@ -19,9 +22,10 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.6.1",
     "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.6",
     "morgan": "^1.10.0",
-    "passport": "^0.4.1",
+    "normalize-url": "^5.1.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
     "path": "^0.12.7"

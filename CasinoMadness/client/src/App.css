@@ -31,6 +31,7 @@ body, #root {
 
 .body {
   min-height: 100vh;
+  min-width: 100%;
 }
 
 /* Header styles*/
@@ -78,8 +79,8 @@ body, #root {
 
 #hand {
   padding: 0;
-  min-height: 60vh;
-  width: clamp(70vw, 90vw, 800px);
+  min-height: 70vh;
+  width: clamp(70vw, 95vw, 100vw);
   background: radial-gradient(
     farthest-corner,
     rgb(194, 1, 1),
@@ -142,6 +143,9 @@ body, #root {
   color: rgba(253, 253, 253, 0.7);
   text-shadow: black 1px 1px 2px, white -1px -1px 0px;
   letter-spacing: 0.2em;
+}
+.pokerbutton{
+  width: clamp(2vw,10vw,12vw);
 }
 
 #btns input,
@@ -214,14 +218,32 @@ select {
   background-attachment: fixed;
 }
 
-.card {
-  width: 20vw;
-  height: 50vh;
+.opaque9 {
+  opacity: .9;
+}
+
+.alert-danger {
+  background-color:red ;
+  color:#fff;
 }
 
 /* Profile Styles */
 .profilepage {
   color: white;
+}
+
+.profile-top img{
+  height: clamp(5vh,15vh,20vh);
+  width: clamp(30vw, 40vw);
+  float: left;
+}
+
+@media screen and (max-width: 291px){
+  .profile-top img{
+    height: clamp(5vh,15vh,20vh);
+    width: 100vw;
+    float: left;
+  }
 }
 /* Footer Styles */
 .footer {

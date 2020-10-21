@@ -1,40 +1,28 @@
-const { body, validationResult } = require("express-validator");
-const passport = require("passport"), LocalStrategy = require('passport-local').Strategy;
+const User = require("../models/User");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
+const { body, validationResult } = require('express-validator');
+const Profile = require("../models/Profile");
 
-// require User model
-const User = require('../models/User');
 
 //register new user
-exports.addNewUser = ([
-    // Check if name is filled out
-    body("username", "Name is required").not().isEmpty(),
-    // Check if email is filled and valid
-    body("email", "Please include a valid email").isEmail(),
-    // Check if password is valid
-    body(
-        "password",
-        "Please enter a password with 6 or more characters"
-    ).isLength({ min: 6 }),
-],
-    async (req, res, next) => {
+exports.addNewUser = (
+    async (req, res) => {
         const errors = validationResult(req);
-        // check if errors
         if (!errors.isEmpty()) {
-            // send 400 bad request
             return res.status(400).json({ errors: errors.array() });
         }
 
-        // Destructure from req.body
         const { username, email, password } = req.body;
 
         try {
-            // See if user exists
             let user = await User.findOne({ email });
+
             if (user) {
                 return res
                     .status(400)
-                    .json({ errors: [{ msg: "User already exists" }] });
-
+                    .json({ errors: [{ msg: 'User already exists' }] });
             }
             // create instance of User Schema
             user = new User({
@@ -43,66 +31,32 @@ exports.addNewUser = ([
                 password,
             });
 
-            User.register({ username: username, email: email }, password, function (err, user) {
-                if (err) {
-                    console.log(err);
-                    return res.status(500).json({ err: err });
-                    // return res.redirect("/");
-                } else {
-                    passport.authenticate("local")(req, res, function () {
-                        return res.status(200).json({ user });
-                        // res.redirect("/auth/userHome");
-                    })
-                }
-            })
+            const salt = await bcrypt.genSalt(10);
 
+            user.password = await bcrypt.hash(password, salt);
+
+            await user.save();
+
+            const payload = {
+                user: {
+                    id: user.id
+                }
+            };
+
+            jwt.sign(
+                payload,
+                config.get('jwtSecret'),
+                { expiresIn: '5 days' },
+                (err, token) => {
+                    if (err) throw err;
+                    res.json({ token });
+                }
+            );
         } catch (err) {
             console.error(err.message);
-            res.status(500).send("Server Error");
+            res.status(500).send('Server error');
         }
-    });
+    }
+);
 
 
-//user login
-exports.login = (
-    [
-        // Check if email is valid
-        body("username", "Please include a valid username").not().isEmpty(),
-        // Check if password is valid
-        body("password", "Please is required").exists(),
-    ],
-    async (req, res, next) => {
-        const errors = validationResult(req);
-        // check if errors
-        if (!errors.isEmpty()) {
-            // send 400 bad request
-            return res.status(400).json({ errors: errors.array() });
-        }
-
-        // Destructure from req.body
-        const { username, password } = req.body;
-
-        // create instance of User Schema
-        user = new User({
-            username,
-            password,
-        });
-
-        try {
-
-            req.login(user, function (err) {
-                if (err) {
-                    return next(err);
-                } else {
-                    passport.authenticate("local")(req, res, function () {
-                        return res.json({ user });
-                    });
-                }
-            })
-
-
-        } catch (err) {
-            console.error(err.message);
-            res.status(500).send("Server Error");
-        }
-    });

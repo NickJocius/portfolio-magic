@@ -26,9 +26,13 @@ body {
 	width: 95%;
 	max-width: 1460px;
 	min-width: 130px;
+	min-height: 100vh;
 	margin: 0 auto;
 }
 
+.body {
+	min-height: 100vh;
+}
 header {
 	width: 100%;
 	text-align: center;
@@ -58,6 +62,11 @@ header {
 	justify-content: space-around;
 }
 
+footer {
+	
+	margin-bottom:0;
+	bottom:0;
+}
 
 .footlist {
 	display: flex;
