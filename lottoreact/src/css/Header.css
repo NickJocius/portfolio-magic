@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.Header {
+    background-image: url('../images/15647.jpg');
+    background-position: top right;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-attachment: scroll;
+    padding:2rem;
+    max-width: 100%;
+    max-height: fit-content;
+}
+
+.Header-title {
+    padding: 2rem;
+    font-size: 4rem;
+    color:whitesmoke;
+}

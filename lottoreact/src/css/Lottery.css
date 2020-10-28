@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+.Lottery {
+    max-width: 100%;
+    
+    background-image: linear-gradient(to right top, #1b105e, #2c2c78, #3e4792, #5263ac, #6780c6, #6e96d5, #7aace2, #8bc2ee, #9bd3f0, #b2e3f2, #cef1f6, #ebfffe);
+}
+
+.Lottery-title {
+    font-size: 4rem;
+    font-weight: bolder;
+    letter-spacing: .5em;
+}
+
+.Lottery-balls {
+    display:flex;
+    flex-direction: row;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin:0;
+    padding:0;
+  }
+
+.Lottery-btn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color:white;
+    background-color: #1b105e;
+}

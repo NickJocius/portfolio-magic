@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+.ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+  }
+  .ball:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 8%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 0px, #ffffff, rgba(255, 255, 255, 0) 58%);
+    filter: blur(5px);
+    z-index: 2;
+  }
+  
+  .ball .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 40% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+  transform: rotateX(90deg) translateZ(-110px) translateX(-98px);
+  z-index: -1;
+  }
+  .stage {
+    max-width: 15em;
+    height: 14em;
+    display: inline-block;
+    margin: 20px;
+    -webkit-perspective: 1200px;
+    -moz-perspective: 1200px;
+    -ms-perspective: 1200px;
+    -o-perspective: 1200px;
+    perspective: 1200px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    -ms-perspective-origin: 50% 50%;
+    -o-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    flex: 1 1 15em;
+  }
+  
+  .number {
+    color:white;
+    font-size: 1.8em;
+    transform: translateX(18px) translateY(50px) skewX(15deg) skewY(2deg);
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    padding:.4em;
+  }
+
+  .bouncing6 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .8s;
+  
+  }
+  .bouncing1 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .3s;
+  }
+  .bouncing2 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .7s;
+  }
+  .bouncing3 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .1s;
+  }
+  .bouncing4 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .5s;
+  }
+  .bouncing5 {
+    animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5,0.05,1,.5);
+  animation-iteration-count: infinite;
+  animation-delay: .2s;
+  }
+
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0); }
+  to  { transform: translate3d(0, 200px, 0); }
+  }
+
+
+  
