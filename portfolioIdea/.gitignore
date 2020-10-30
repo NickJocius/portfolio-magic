@@ -15,3 +15,7 @@
 !*.md
 !*.css
 !*.js
+!js/
+!resources/
+!html/
+!css/
