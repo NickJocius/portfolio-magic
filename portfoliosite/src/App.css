@@ -9,15 +9,19 @@
     --play-text: 'Play', sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 #root {
-    min-width: fit-content;
+    min-width: 100vw;
     min-height: 100vh;
     margin:0;
     padding:0;
 }
 
 body{
-    width: 100%;
+    width: fit-content;
     min-height: 100vh;
     padding:0;
     background: black;
@@ -30,8 +34,9 @@ body{
     padding:0;
 }
 
+
 #contact .Contacts a {
-    font-size: clamp(.9rem, -0.875rem + 8.333vw, 2.5rem);
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2.5rem);
     color: var(--primary-light);
 }
 
@@ -47,13 +52,13 @@ body{
 
 .Navbar .titleSpan:first-of-type {
     color:var(--primary-color);
-    font-size: clamp(1vw,3rem,3rem);
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3rem);
     font-family: var(--russo-text);
 }
 
 .Navbar .titleSpan:nth-of-type(2) {
     color:var(--light-color);
-    font-size: clamp(1vw,3rem,3rem);
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3rem);
     font-family: var(--russo-text);
 }
 
@@ -83,9 +88,17 @@ body{
 }
 
 .Navbar .active-link {
-    transform: scale(1.1) translate(0px,10px);
+    transform: scale(1.2) translate(2px,2px);
 }
 
+@media (max-width: 990px){
+    .Navbar .collapse div, .collapsing div{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all .2s ease;
+    }
+}
 
 .Home .HomePhoto {
     background: left / cover no-repeat url('../src/images/neonmist.jpg') fixed;
@@ -102,7 +115,7 @@ body{
     list-style: none;
     line-height: 2.5rem;
     letter-spacing: .8rem;
-    font-size: clamp(.9rem, -0.875rem + 8.333vw, 2.7rem);
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 2.7rem);
 }
 
 .Home hr { 
@@ -111,18 +124,20 @@ body{
     background-image: linear-gradient(to right top, #260659, #32087b, #3e0a9e, #4a0ec4, #5412eb); 
 }
 
+
 .Home .homeInfo h2 {
-        font-size: clamp(.9rem, -0.875rem + 8.333vw, 3.5rem);
+        font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3.5rem);
         font-weight: 200;
         max-width: 100%;
         font-style: italic;
         color: #fff;
-        padding: 2rem 4rem 3.5rem;
+        padding: 1rem 2rem 1.5rem;
         border: 0.4rem solid #fff;
         text-transform: uppercase;
         animation: flicker 4.5s infinite alternate;     
-        text-overflow: clip;
         font-family: var(--russo-text);
+        text-align: center;
+        word-wrap: break-word;
 }
 
 .Home h2::selection {
@@ -164,7 +179,7 @@ body{
 }
 
 .Home .homeInfo p {
-    font-size: clamp(.9rem, -0.875rem + 8.333vw, 2rem);
+    font-size: clamp(1.4rem, -0.875rem + 8.333vw, 2rem);
     font-family: var(--play-text);
 }
 
@@ -213,6 +228,22 @@ body{
     background-image: linear-gradient(to right , #260659, #32087b, #3e0a9e, #4a0ec4, #5412eb);
 }
 
+.Works {
+    min-height: 100vh;
+    min-width: fit-content;
+}
+
+@media screen and (max-width:767px) {
+    .Works {
+        padding:0;
+    }
+}
+.Works-space {
+    max-height: 30%;
+    height: 30vh;
+    min-height: 10vh;
+    background-color: #260659;
+}
 .Footer {
     color: var(--light-color);
     font-family: var(--play-text);

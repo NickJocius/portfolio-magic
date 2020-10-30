@@ -6,7 +6,7 @@ const Home = (props) => {
     return (
         <Fragment>
             <section className="container-fluid Home h-100 p-0 m-0">
-                <div className="row grid-columns container-fluid">
+                <div className="row grid-columns container-fluid m-0 p-0">
                     <div className='col-lg-8 HomePhoto p-0 d-flex align-items-center'>
                         <div className=" m-auto imageDiv d-flex align-items-center">
                             <ul className="p-5  m-5">
@@ -16,11 +16,11 @@ const Home = (props) => {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-4 homeInfo d-flex flex-column align-items-center justify-content-center p-5">
+                    <div className="col-lg-4 homeInfo d-flex flex-column align-items-center justify-content-center p-4">
                         <h2 className="text-white m-auto h2">FUll-Stack Web Developer</h2>
                         <p className="text-white text-center p-2">My name is Nick Jocius, I am a full-stack web developer and designer.  I specialize in designing, testing and deploying
                         complete mobile friendly and visually stunning websites from the ground up.  I have expertise in both server-side programming and client-side U/I development.  I
-                    employ the latest and greates techniques within the javascript programming language utilizing the MERN stack.</p>
+                    employ the latest and greatest techniques within the javascript programming language utilizing the MERN stack.</p>
                         <button onClick={() => props.history.push("/contact")} className="btn btn-outline-light contactBtn">Contact Me</button>
                     </div>
                 </div>

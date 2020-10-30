@@ -4,15 +4,15 @@ import Computer from '../images/computer.png';
 const Resume = () => {
     return (
         <Fragment>
-            <section className="container-fluid h-100 Resume d-flex align-items-center">
-                <div className="row grid-columns m-0 info">
+            <section className="container-fluid h-100 Resume d-flex align-items-center justify-content-center">
+                <div className="row grid-columns m-0 info flex-shrink-1">
                     <div className="col-md-4 Bio d-flex flex-column align-items-center justify-content-center bg-light p-2">
-                        <h1>Nicholas Jocius</h1>
+                        <h1 className="text-center">Nicholas Jocius</h1>
                         <img src={Computer} alt="code brackets" className="img-fluid bioImage" />
                         <p>Full-Stack Web Developer</p>
                         <p>Austin, TX</p>
                     </div>
-                    <div className="col-md-8 d-flex flex-column experience">
+                    <div className="col-md-8 d-flex flex-column flex-grow-1 experience p-4">
                         <h3>Profile</h3>
                         <p>Creative full-stack web developer dedicated to intelligently designing, building,
                         testing, and optimizing mobile-first websites and web applications in all stages of development and integration.
