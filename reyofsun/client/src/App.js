@@ -6,11 +6,13 @@ import Home from './pages/Home';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Header from './components/nav/Header';
+import Navbar from './components/nav/Navbar';
 
 const App = () => {
   return (
     <Fragment>
       <Header />
+      <Navbar />
       <ToastContainer />
       <Switch>
         <Route exact path="/" component={Home} />
