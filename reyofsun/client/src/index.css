@@ -1,1 +1,36 @@
 @charset "UTF-8";
+
+/* Header Styles */
+.Header {
+    background-color: black;
+}
+
+#Header_img {
+    min-width: 100%;
+}
+
+/* Navbar Styles */
+#Navbar {
+    background-color: black;
+}
+
+.Nav_item {
+    color: aliceblue;
+}
+
+#Navbar a {
+    color: aliceblue;
+}
+
+.ant-menu-item span{
+    color: aliceblue;
+}
+
+.ant-menu-item-selected, .ant-menu-item:hover, .ant-menu-submenu:hover {
+    border-bottom:2px solid rgb(73, 209, 32)!important;
+    color: rgb(73, 209, 32)!important;
+}
+
+.ant-menu-item:hover, .ant-menu-item .anticon:hover, .ant-menu-item a:hover, .ant-menu-submenu span:hover, .ant-menu-submenu-title:hover {
+    color: rgb(73, 209, 32)!important;
+}

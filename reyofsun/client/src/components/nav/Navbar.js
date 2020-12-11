@@ -5,7 +5,7 @@ import { HomeOutlined, SettingOutlined, UserAddOutlined, UserOutlined } from '@a
 
 const { SubMenu, Item } = Menu;
 
-const Header = () => {
+const Navbar = () => {
 
     const [current, setCurrent] = useState('home');
 
@@ -15,16 +15,17 @@ const Header = () => {
 
     return (
 
-        <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+        <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal" id="Navbar">
 
             <Item key="home" icon={<HomeOutlined />}>
-                <Link to="/">Home</Link>
+                <Link to="/" className="Nav_item">Home</Link>
             </Item>
 
             <SubMenu
                 key="SubMenu"
                 icon={<SettingOutlined />}
                 title="Username"
+                className="Nav_item"
             >
                 <Item key="dashboard">Dashboard</Item>
                 <Item key="cart">Cart</Item>
@@ -32,7 +33,7 @@ const Header = () => {
             </SubMenu>
 
             <Item key="register" icon={<UserAddOutlined />} className="float-right">
-                <Link to="/register">Register</Link>
+                <Link to="/register" className="Nav_item">Register</Link>
             </Item>
 
             <Item key="login" icon={<UserOutlined />} className="float-right">
@@ -43,4 +44,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Navbar;
