@@ -1,16 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Menu } from 'antd';
-import { HomeOutlined, SettingOutlined, UserAddOutlined, UserOutlined } from '@ant-design/icons';
+import { HomeOutlined, SettingOutlined, UserAddOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons';
+import firebase from 'firebase';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 const { SubMenu, Item } = Menu;
 
 const Navbar = () => {
 
     const [current, setCurrent] = useState('home');
+    let dispatch = useDispatch();
+    let { user } = useSelector((state) => ({ ...state }));
+    let history = useHistory();
 
     const handleClick = (e) => {
         setCurrent(e.key);
+    };
+
+    const logout = () => {
+        firebase.auth().signOut();
+        dispatch({
+            type: "LOGOUT",
+            payload: null
+        });
+        history.push('/login');
     }
 
     return (
@@ -21,24 +37,30 @@ const Navbar = () => {
                 <Link to="/" className="Nav_item">Home</Link>
             </Item>
 
-            <SubMenu
-                key="SubMenu"
-                icon={<SettingOutlined />}
-                title="Username"
-                className="Nav_item"
-            >
-                <Item key="dashboard">Dashboard</Item>
-                <Item key="cart">Cart</Item>
+            {user && (
+                <SubMenu
+                    key="SubMenu"
+                    icon={<SettingOutlined />}
+                    title={user.email && user.email.split('@')[0]}
+                    className="Nav_item float-right"
+                >
+                    <Item key="dashboard">Dashboard</Item>
+                    <Item key="cart">Cart</Item>
+                    <Item key="logout" id="logout" icon={<LogoutOutlined />} onClick={logout}>Logout</Item>
+                </SubMenu>
+            )}
 
-            </SubMenu>
+            {!user && (
+                <Item key="register" icon={<UserAddOutlined />} className="float-right">
+                    <Link to="/register" className="Nav_item">Register</Link>
+                </Item>
+            )}
 
-            <Item key="register" icon={<UserAddOutlined />} className="float-right">
-                <Link to="/register" className="Nav_item">Register</Link>
-            </Item>
-
-            <Item key="login" icon={<UserOutlined />} className="float-right">
-                <Link to="/login">Login</Link>
-            </Item>
+            {!user && (
+                <Item key="login" icon={<UserOutlined />} className="float-right">
+                    <Link to="/login">Login</Link>
+                </Item>
+            )}
 
         </Menu>
     )

@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+:root {
+    --reyGreen: rgb(73, 209, 32);
+    --navText: aliceblue;
+    --navFontSize: clamp(.8rem, -0.875rem + 8.333vw, 1.2rem);
+}
+
+ /* Html and body styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+   width: 100%;
+   min-height: 100vh;
+   scroll-behavior: smooth;
+}
+
 /* Header Styles */
 .Header {
     background-color: black;
@@ -7,30 +25,41 @@
 
 #Header_img {
     min-width: 100%;
+    min-height: fit-content;
+    width: 40%;
+    height: 40%;
+}
+
+#Header_imgLrg {
+    min-width: 100%;
 }
 
 /* Navbar Styles */
 #Navbar {
     background-color: black;
+    font-size: var(--navFontSize);
 }
 
 .Nav_item {
-    color: aliceblue;
+    color: var(--navText);
 }
 
+#logout span{
+    color:black;
+}
 #Navbar a {
-    color: aliceblue;
+    color: var(--navText);
 }
 
 .ant-menu-item span{
-    color: aliceblue;
+    color: var(--navText);
 }
 
 .ant-menu-item-selected, .ant-menu-item:hover, .ant-menu-submenu:hover {
-    border-bottom:2px solid rgb(73, 209, 32)!important;
-    color: rgb(73, 209, 32)!important;
+    border-bottom:2px solid var(--reyGreen)!important;
+    color: var(--reyGreen)!important;
 }
 
 .ant-menu-item:hover, .ant-menu-item .anticon:hover, .ant-menu-item a:hover, .ant-menu-submenu span:hover, .ant-menu-submenu-title:hover {
-    color: rgb(73, 209, 32)!important;
+    color: var(--reyGreen)!important;
 }
