@@ -44,7 +44,7 @@ const Navbar = () => {
                     title={user.email && user.email.split('@')[0]}
                     className="Nav_item float-right"
                 >
-                    <Item key="dashboard">Dashboard</Item>
+                    <Item key="dashboard"><Link to="/user/history">Dashboard</Link></Item>
                     <Item key="cart">Cart</Item>
                     <Item key="logout" id="logout" icon={<LogoutOutlined />} onClick={logout}>Logout</Item>
                 </SubMenu>

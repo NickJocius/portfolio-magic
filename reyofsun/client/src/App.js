@@ -16,6 +16,8 @@ import Header from './components/nav/Header';
 import Navbar from './components/nav/Navbar';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import History from './pages/user/History';
+import Password from './pages/user/Password';
+import Wishlist from './pages/user/Wishlist';
 import UserRoute from './components/routes/UserRoute';
 
 
@@ -76,6 +78,8 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot/password" component={ForgotPassword} />
         <UserRoute exact path="/user/history" component={History} />
+        <UserRoute exact path="/user/Password" component={Password} />
+        <UserRoute exact path="/user/Wishlist" component={Wishlist} />
       </Switch>
     </Fragment>
   );
