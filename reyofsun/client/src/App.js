@@ -10,10 +10,14 @@ import RegisterComplete from './pages/auth/RegisterComplete';
 
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
+import { currentUser } from './functions/auth';
 
 import Header from './components/nav/Header';
 import Navbar from './components/nav/Navbar';
 import ForgotPassword from './pages/auth/ForgotPassword';
+import History from './pages/user/History';
+import UserRoute from './components/routes/UserRoute';
+
 
 const App = () => {
 
@@ -29,16 +33,28 @@ const App = () => {
         // get user token
         const idTokenResult = await user.getIdTokenResult();
 
-        dispatch({
-          type: 'LOGGED_IN_USER',
+        // populate user in redux store
+        currentUser(idTokenResult.token)
+          .then(
+            (res) => {
+              dispatch({
+                type: 'LOGGED_IN_USER',
 
-          payload: {
+                payload: {
+                  name: res.data.name,
+                  email: res.data.email,
+                  token: idTokenResult.token,
+                  role: res.data.role,
+                  _id: res.data._id,
+                },
 
-            email: user.email,
-            token: idTokenResult.token
-          },
+              });
+            }
 
-        });
+          )
+          .catch((err) => {
+            console.log(err.message);
+          })
       }
     });
 
@@ -59,6 +75,7 @@ const App = () => {
         <Route exact path="/register/complete" component={RegisterComplete} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/forgot/password" component={ForgotPassword} />
+        <UserRoute exact path="/user/history" component={History} />
       </Switch>
     </Fragment>
   );
