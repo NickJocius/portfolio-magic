@@ -21,12 +21,12 @@ const Login = ({ history }) => {
         if (user && user.token) {
             history.push("/");
         }
-    }, [user]);
+    }, [user, history]);
 
     let dispatch = useDispatch();
 
     const roleBasedRedirect = (res) => {
-        if (res.data.role == 'admin') {
+        if (res.data.role === 'admin') {
             history.push('/admin/dashboard');
         } else {
             history.push('/user/history');
