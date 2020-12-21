@@ -14,6 +14,7 @@ import { currentUser } from './functions/auth';
 
 import Header from './components/nav/Header';
 import Navbar from './components/nav/Navbar';
+import Footer from './components/footer/Footer';
 import ForgotPassword from './pages/auth/ForgotPassword';
 import History from './pages/user/History';
 import Password from './pages/user/Password';
@@ -84,6 +85,7 @@ const App = () => {
         <UserRoute exact path="/user/Wishlist" component={Wishlist} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
       </Switch>
+      <Footer />
     </Fragment>
   );
 }

@@ -44,7 +44,18 @@ const Navbar = () => {
                     title={user.email && user.email.split('@')[0]}
                     className="Nav_item float-right"
                 >
-                    <Item key="dashboard"><Link to="/user/history">Dashboard</Link></Item>
+                    {user && user.role === "subscriber" && (
+                        <Item>
+                            <Link to="/user/history">Dashboard</Link>
+                        </Item>
+                    )}
+
+                    {user && user.role === "admin" && (
+                        <Item>
+                            <Link to="/admin/dashboard">Dashboard</Link>
+                        </Item>
+                    )}
+
                     <Item key="cart">Cart</Item>
                     <Item key="logout" id="logout" icon={<LogoutOutlined />} onClick={logout}>Logout</Item>
                 </SubMenu>

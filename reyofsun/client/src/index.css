@@ -18,6 +18,7 @@ html {
    scroll-behavior: smooth;
 }
 
+
 /* Header Styles */
 .Header {
     background-color: black;
@@ -62,4 +63,110 @@ html {
 
 .ant-menu-item:hover, .ant-menu-item .anticon:hover, .ant-menu-item a:hover, .ant-menu-submenu span:hover, .ant-menu-submenu-title:hover {
     color: var(--reyGreen)!important;
+}
+
+/* Home styles */
+.Home {
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: black;
+}
+
+.Home_section1 {
+    background-image: linear-gradient(to right top, #032901, #04330d, #083d15, #0d481d, #125326, #13632d, #137435, #12853c, #0aa042, #02bb3a, #01d725, #34f40e);
+    text-align: justify;
+    padding: 20px 50px;
+    color: var(--navText);
+}
+
+.Home_section2 {
+    background-image: linear-gradient(to right top, #013209, #024f16, #056e23, #0a8e31, #0eb03f);
+    text-align: justify;
+    padding: 50px 100px;
+    color: rgb(240, 234, 234);
+    text-align: center;
+}
+
+.Home_section3 {
+    background-color: rgb(255, 255, 255);
+    text-align: justify;
+    padding: 50px 100px;
+    color: rgb(62, 62, 65);
+    text-align: center;
+}
+
+.Section_p {
+    font-size:clamp(1rem, -0.875rem + 8.333vw, 1.5rem) ;
+    padding: 50px;
+}
+
+@media screen and (max-width: 575px) {
+    .Section_p {
+        padding: 20px;
+    }
+
+    .Home_section1, .Home_section2, .Home_section3 {
+        padding: 10px 25px;
+    }
+}
+
+.Home_parallax1 {
+    background-image: url('/src/assets/images/paint1.jpg');
+    min-height: 50vh;
+    color: var(--navText);
+}
+
+.Home_parallax2 {
+    background-image: url('/src/assets/images/paint1.jpg');
+    min-height: 50vh;
+}
+
+.Home_parallax3 {
+    background-image: url('/src/assets/images/paint1.jpg');
+    min-height: 50vh;
+}
+
+.Home_parallax4 {
+    background-image: url('/src/assets/images/paint1.jpg');
+    min-height: 50vh;
+}
+
+.Home_parallax1, .Home_parallax2, .Home_parallax3, .Home_parallax4 {
+    position: relative;
+    opacity: .65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Home_caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: var(--navText);
+
+}
+
+.Caption_span {
+    background-color: transparent;
+    font-size:clamp(2rem, -0.875rem + 8.333vw, 2.5rem) ;
+    color: #f7f7f7;
+    padding: 18px;
+}
+
+/* Admin Dashboard */
+.AdminDash {
+    min-height: 100vh;
+}
+
+/* Footer Styles */
+.Footer {
+    background-color: black;
+}
+
+.Footer h4 {
+    color: var(--navText);
 }

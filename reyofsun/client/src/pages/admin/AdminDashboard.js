@@ -1,10 +1,16 @@
-import React, { Fragment } from "react";
+import React from "react";
+import AdminNav from '../../components/nav/AdminNav';
 
 const AdminDashboard = () => {
     return (
-        <Fragment>
-            <p>Admin dashboard</p>
-        </Fragment>
+        <div className="AdminDash container-fluid">
+            <div class="row">
+                <div className="col-md-2">
+                    <AdminNav />
+                </div>
+                <div className="col">Admin history page</div>
+            </div>
+        </div>
     );
 };
 
