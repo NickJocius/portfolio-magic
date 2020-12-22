@@ -10,6 +10,8 @@ import {
 } from "../../../functions/category";
 import loadgif from '../../../assets/images/loading.gif';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import CategoryForm from '../../../components/forms/CategoryForm';
+import LocalSearch from '../../../components/forms/LocalSearch';
 
 const CategoryCreate = () => {
 
@@ -17,6 +19,9 @@ const CategoryCreate = () => {
     const [name, setName] = useState("");
     const [loading, setLoading] = useState(false);
     const [categories, setCategories] = useState([]);
+
+    // searching/filtering
+    const [keyword, setKeyword] = useState('');
 
     useEffect(() => {
         loadCategories();
@@ -64,23 +69,8 @@ const CategoryCreate = () => {
         }
     };
 
-    const categoryForm = () => (
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label>Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    autoFocus
-                    required
-                />
-                <br />
-                <button className="btn btn-outline-primary">Save</button>
-            </div>
-        </form>
-    );
+
+    const searched = (keyword) => (c) => c.name.toLowerCase().includes(keyword);
 
 
     return (
@@ -99,8 +89,10 @@ const CategoryCreate = () => {
 
                         )}
 
-                    {categoryForm()}
-                    {categories.map((c) => (
+                    <CategoryForm handleSubmit={handleSubmit} name={name} setName={setName} />
+                    <LocalSearch keyword={keyword} setKeyword={setKeyword} />
+
+                    {categories.filter(searched(keyword)).map((c) => (
                         <div className="alert alert-secondary" key={c._id}>
                             <div>
                                 {c.name}

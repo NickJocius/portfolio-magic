@@ -7,6 +7,7 @@ import {
     updateCategory
 } from "../../../functions/category";
 import loadgif from '../../../assets/images/loading.gif';
+import CategoryForm from '../../../components/forms/CategoryForm';
 
 const CategoryUpdate = ({ history, match }) => {
 
@@ -42,24 +43,6 @@ const CategoryUpdate = ({ history, match }) => {
     };
 
 
-    const categoryForm = () => (
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label>Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    autoFocus
-                    required
-                />
-                <br />
-                <button className="btn btn-outline-primary">Save</button>
-            </div>
-        </form>
-    );
-
     return (
         <div className="AdminDash container-fluid">
             <div className="row">
@@ -75,7 +58,7 @@ const CategoryUpdate = ({ history, match }) => {
                             </div>
 
                         )}
-                    {categoryForm()}
+                    <CategoryForm handleSubmit={handleSubmit} name={name} setName={setName} />
                 </div>
             </div>
         </div>
