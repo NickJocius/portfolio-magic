@@ -11,17 +11,21 @@ import RegisterComplete from './pages/auth/RegisterComplete';
 import { auth } from './firebase';
 import { useDispatch } from 'react-redux';
 import { currentUser } from './functions/auth';
-
+// components
 import Header from './components/nav/Header';
 import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
+// user routes
 import ForgotPassword from './pages/auth/ForgotPassword';
 import History from './pages/user/History';
 import Password from './pages/user/Password';
 import Wishlist from './pages/user/Wishlist';
 import UserRoute from './components/routes/UserRoute';
+// admin routes
 import AdminRoute from './components/routes/AdminRoute';
 import AdminDashboard from './pages/admin/AdminDashboard';
+import CategoryCreate from './pages/admin/category/CategoryCreate';
+import CategoryUpdate from './pages/admin/category/CategoryUpdate';
 
 
 const App = () => {
@@ -84,6 +88,8 @@ const App = () => {
         <UserRoute exact path="/user/Password" component={Password} />
         <UserRoute exact path="/user/Wishlist" component={Wishlist} />
         <AdminRoute exact path="/admin/dashboard" component={AdminDashboard} />
+        <AdminRoute exact path="/admin/category" component={CategoryCreate} />
+        <AdminRoute exact path="/admin/category/:slug" component={CategoryUpdate} />
       </Switch>
       <Footer />
     </Fragment>

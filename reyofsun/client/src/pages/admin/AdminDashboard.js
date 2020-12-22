@@ -4,7 +4,7 @@ import AdminNav from '../../components/nav/AdminNav';
 const AdminDashboard = () => {
     return (
         <div className="AdminDash container-fluid">
-            <div class="row">
+            <div className="row">
                 <div className="col-md-2">
                     <AdminNav />
                 </div>

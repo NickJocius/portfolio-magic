@@ -157,6 +157,11 @@ html {
     padding: 18px;
 }
 
+/* Loading styles */
+.Loading {
+    min-height: 100vh;
+}
+
 /* Admin Dashboard */
 .AdminDash {
     min-height: 100vh;

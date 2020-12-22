@@ -14,15 +14,8 @@ exports.create = async (req, res) => {
     }
 };
 
-exports.list = async (req, res) => {
-
-    try {
-        // get all categories
-        res.json(await Category.find({}).sort({ createdAt: -1 }).exec());
-    } catch (error) {
-        res.status(400).send('Categories request failed');
-    }
-};
+exports.list = async (req, res) =>
+    res.json(await Category.find({}).sort({ createdAt: -1 }).exec());
 
 exports.read = async (req, res) => {
     try {
@@ -35,22 +28,24 @@ exports.read = async (req, res) => {
 };
 
 exports.update = async (req, res) => {
+    const { name } = req.body;
     try {
-        // update category
-        const { name } = req.body;
-        const updated = await Category.findByIdAndUpdate({ slug: req.params.slug }, { name: name, slug: slugify(name) }, { new: true });
+        const updated = await Category.findOneAndUpdate(
+            { slug: req.params.slug },
+            { name, slug: slugify(name) },
+            { new: true }
+        );
         res.json(updated);
-    } catch (error) {
-        res.status(400).send('Category update failed');
+    } catch (err) {
+        res.status(400).send("Category update failed");
     }
 };
 
 exports.remove = async (req, res) => {
     try {
-        // remove category
-        const deleted = await Category.findByIdAndDelete({ slug: req.params.slug });
+        const deleted = await Category.findOneAndDelete({ slug: req.params.slug });
         res.json(deleted);
-    } catch (error) {
-        res.status(400).send('Category deletion failed');
+    } catch (err) {
+        res.status(400).send("Create delete failed");
     }
 };
