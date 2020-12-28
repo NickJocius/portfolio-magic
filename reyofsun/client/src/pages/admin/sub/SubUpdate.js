@@ -79,7 +79,7 @@ const SubUpdate = ({ match, history }) => {
                             <option>Please select</option>
                             {categories.length > 0 &&
                                 categories.map((c) => (
-                                    <option key={c._id} value={c._id}>
+                                    <option key={c._id} value={c._id} selected={c._id === parent}>
                                         {c.name}
                                     </option>
                                 ))}
