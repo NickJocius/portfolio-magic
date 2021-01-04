@@ -2,12 +2,20 @@
 import Nav from '../components/Nav';
 import { Provider } from '../context';
 import 'bootstrap/dist/css/bootstrap.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import FirebaseAuthState from '../components/FirebaseAuthState';
 
 export default function MyApp({ Component, pageProps }) {
     return (
         <Provider>
-            <Nav />
-            <Component {...pageProps} />
+            <FirebaseAuthState>
+                <Nav />
+                <ToastContainer />
+                <Component {...pageProps} />
+            </FirebaseAuthState>
+
+
         </Provider>
     )
 
