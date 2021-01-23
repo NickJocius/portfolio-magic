@@ -3,10 +3,14 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
+const helmet = require('helmet');
 
 // Init middleware
-app.use(express.json({ extended: false})); // To enable bodyParser and allow us to get the data in req.body
-app.use(express.static('public'));
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
+app.use(express.json({ extended: false })); // To enable bodyParser and allow us to get the data in req.body
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Define Routes
 // Make requests to routes in the api route
